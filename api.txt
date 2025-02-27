@@ -82,6 +82,24 @@ Status Code           Category                        Description
 
 5xx                   Server Error                    The server failed to process the request
 
+Commonly Used HTTP Status Codes:
+
+200 OK → Successful request
+
+201 Created → New resource created
+
+400 Bad Request → Invalid request from client
+
+401 Unauthorized → Authentication required
+
+403 Forbidden → User lacks permission
+
+404 Not Found → Resource does not exist
+
+500 Internal Server Error → Server encountered an error
+
+503 Service Unavailable error → Web server is unable to handle a request. 
+
 How to Add and Run API Requests in Postman?
 
 Select the HTTP method (GET, POST, etc.).
