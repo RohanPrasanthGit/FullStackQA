@@ -112,22 +112,6 @@ Add request body (if needed for POST/PUT requests).
 
 Click "Send" and check the response.
 
-Commonly Used HTTP Status Codes:
-
-200 OK → Successful request
-
-201 Created → New resource created
-
-400 Bad Request → Invalid request from client
-
-401 Unauthorized → Authentication required
-
-403 Forbidden → User lacks permission
-
-404 Not Found → Resource does not exist
-
-500 Internal Server Error → Server encountered an error
-
 How to Answer in an Interview?
 
 "HTTP status codes help understand API responses. 2xx means success, 4xx indicates client errors, and 5xx represents server-side issues. For example, a 200 status code means the request was successful, while a 404 means the resource was not found."
