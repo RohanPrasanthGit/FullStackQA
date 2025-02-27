@@ -15,9 +15,7 @@ Git is a distributed version control system that helps developers track changes 
 Git repositories can be hosted on various platforms such as:
 
 GitHub
-
 Bitbucket
-
 GitLab
 
 Possible Interview Question:
