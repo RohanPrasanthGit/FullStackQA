@@ -1,0 +1,213 @@
+Git Interview Preparation Guide
+
+1. Introduction to Git
+
+Git is a Version Control System (VCS) used to track code changes. It allows multiple users to collaborate on code simultaneously.
+
+Possible Interview Question:
+
+What is Git, and why is it used?
+
+Git is a distributed version control system that helps developers track changes in their codebase, collaborate efficiently, and maintain different versions of their projects. It provides features like branching, merging, and version tracking, making it essential for modern software development.
+
+2. Git Hosting Services
+
+Git repositories can be hosted on various platforms such as:
+
+GitHub
+
+Bitbucket
+
+GitLab
+
+Possible Interview Question:
+
+What are some Git hosting services, and how do they differ?
+
+GitHub is widely used for open-source projects and community collaboration, Bitbucket supports both Git and Mercurial and is often preferred for private repositories, and GitLab provides built-in CI/CD pipelines for DevOps.
+
+3. Basic Git Configuration
+
+Before using Git, configure user credentials:
+
+git config --global user.name "Your Name"
+git config --global user.email "your_email@example.com"
+git config --global password "your_password"
+
+Possible Interview Question:
+
+How do you set up Git for the first time?
+
+To configure Git, you need to set up your username and email using the git config command. These settings help associate commits with the correct user.
+
+4. Git Commands
+
+Cloning and Initializing a Repository
+
+Clone an existing repository:
+
+git clone <repository_url>
+
+Initialize a new repository:
+
+git init
+
+Possible Interview Question:
+
+What is the difference between git clone and git init?
+
+git clone copies an existing repository along with its history, while git init initializes a new repository from scratch.
+
+Adding and Committing Changes
+
+Add a file to the staging area:
+
+git add <filename>
+
+Check the status of the repository:
+
+git status
+
+Commit staged changes with a message:
+
+git commit -m "Commit message"
+
+Commit all changes directly:
+
+git commit -a -m "Commit message"
+
+Possible Interview Question:
+
+What is the difference between git add and git commit?
+
+git add moves changes to the staging area, while git commit permanently records them in the repository.
+
+Pushing and Pulling Changes
+
+Push committed changes to a remote repository:
+
+git push origin <branch_name>
+
+Pull the latest changes from a remote branch:
+
+git pull origin <branch_name>
+
+Possible Interview Question:
+
+What happens when you run git pull?
+
+git pull fetches the latest changes from the remote repository and merges them with your local branch.
+
+Working with Branches
+
+List all branches:
+
+git branch -a
+
+Create a new branch:
+
+git branch <new_branch>
+
+Switch to a different branch:
+
+git checkout <branch_name>
+
+Create and switch to a new branch:
+
+git checkout -b <new_branch>
+
+Rename a branch:
+
+git branch -m <new_name>
+
+Merge a branch into the current branch:
+
+git merge <branch_to_merge>
+
+Delete a branch:
+
+git branch -d <branch_name>
+
+Possible Interview Question:
+
+What is the difference between git merge and git rebase?
+
+git merge combines branches while preserving their history, while git rebase rewrites commit history by applying changes on top of another branch.
+
+Remote Repository Management
+
+Add a remote repository:
+
+git remote add origin <repository_url>
+
+Change the remote repository URL:
+
+git remote set-url origin <new_repository_url>
+
+Show remote repositories:
+
+git remote -v
+
+Viewing Differences and Logs
+
+Show differences between commits or working directory changes:
+
+git diff <file>
+
+Show commit history:
+
+git log
+
+Stashing Changes
+
+Save changes temporarily without committing:
+
+git stash
+
+Apply the latest stashed changes:
+
+git stash apply
+
+Resetting and Reverting Changes
+
+Undo the last commit but keep changes in the working directory:
+
+git reset --soft HEAD~1
+
+Undo the last commit and remove changes completely:
+
+git reset --hard HEAD~1
+
+Possible Interview Question:
+
+What is the difference between git reset and git revert?
+
+git reset moves the branch pointer backward, deleting commits, while git revert creates a new commit that undoes changes without modifying history.
+
+5. Additional Topics
+
+Handling Merge Conflicts
+
+Steps to resolve conflicts:
+
+Identify conflicting files using git status.
+
+Open files, resolve conflicts manually, and save.
+
+Stage resolved files using git add <filename>.
+
+Commit the resolved changes with git commit -m "Resolved merge conflict".
+
+Git Tagging
+
+Create a new tag:
+
+git tag <tag_name>
+
+Push a tag to the remote repository:
+
+git push origin <tag_name>
+
+Conclusion
+
+This guide covers essential Git commands and concepts required for an interview. By understanding these topics and preparing possible answers, you'll be well-equipped to handle Git-related questions with confidence.
