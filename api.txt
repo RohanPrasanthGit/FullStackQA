@@ -1,0 +1,300 @@
+API Interview Preparation Guide
+
+1. What is an API?
+
+API stands for Application Programming Interface. It is a set of rules that allows different software applications to communicate with each other. APIs define methods and data formats applications can use to request and exchange information.
+
+How to Answer in an Interview?
+
+"An API acts as an intermediary between two software applications, enabling them to communicate. It defines a set of functions and protocols that allow applications to interact without needing direct access to each other’s code or database."
+
+2. What is Postman?
+
+Postman is a popular platform used for API development, testing, and automation. It provides a user-friendly interface to send requests, inspect responses, and automate tests.
+
+Key Features of Postman:
+
+Development: Helps developers build and test APIs.
+
+Testing: Used to test API responses and validate functionality.
+
+Maintenance & Management: Stores API collections, variables, and environments for easy debugging and execution.
+
+How to Answer in an Interview?
+
+"Postman is an API development and testing tool that simplifies sending requests and analyzing responses. It allows developers to automate tests, manage API collections, and simulate different environments."
+
+3. HTTP Methods (CRUD Operations)
+
+APIs primarily use HTTP methods to perform operations on resources. These are commonly referred to as CRUD (Create, Read, Update, Delete) operations.
+
+Method       Description                                     Example
+
+GET          Retrieves data from the server                  Fetch user details
+
+POST         Creates a new resource                          Register a new user
+
+PUT          Updates an existing resource                    Update user profile
+
+PATCH        Partially modifies a resource                   Update user email only
+
+DELETE       Removes a resource                              Delete user account
+
+How to Answer in an Interview?
+
+"HTTP methods are used in RESTful APIs to perform operations on resources. GET retrieves data, POST creates new data, PUT updates existing data, PATCH modifies part of a resource, and DELETE removes data."
+
+4. Authentication vs Authorization
+
+Authentication and authorization are two important security concepts in APIs.
+
+Concept              Definition                                                       Example
+
+Authentication       Verifies who the user is                                         Logging in with username and password
+
+Authorization        Determines what actions the user is allowed to perform           Access control (admin vs. regular user)
+
+Common Authentication Methods:
+
+API Key: A unique key provided in the request header.
+
+OAuth 2.0: Token-based authentication used for third-party access.
+
+JWT (JSON Web Token): A secure token used to authenticate users.
+
+How to Answer in an Interview?
+
+"Authentication verifies the identity of a user, while authorization determines what actions they can perform. For example, a user logging into an application is authentication, but their ability to access admin settings is authorization."
+
+5. HTTP Status Codes
+
+HTTP status codes indicate the response from the server.
+
+Status Code           Category                        Description
+
+1xx                   Informational                   Request received, processing continues
+
+2xx                   Success                         Request was successfully processed
+
+3xx                   Redirection                     Client must take additional action
+
+4xx                   Client Error                    Invalid request from the client
+
+5xx                   Server Error                    The server failed to process the request
+
+How to Add and Run API Requests in Postman?
+
+Select the HTTP method (GET, POST, etc.).
+
+Add the API endpoint URL.
+
+Provide necessary headers and authorization.
+
+Add request body (if needed for POST/PUT requests).
+
+Click "Send" and check the response.
+
+Commonly Used HTTP Status Codes:
+
+200 OK → Successful request
+
+201 Created → New resource created
+
+400 Bad Request → Invalid request from client
+
+401 Unauthorized → Authentication required
+
+403 Forbidden → User lacks permission
+
+404 Not Found → Resource does not exist
+
+500 Internal Server Error → Server encountered an error
+
+How to Answer in an Interview?
+
+"HTTP status codes help understand API responses. 2xx means success, 4xx indicates client errors, and 5xx represents server-side issues. For example, a 200 status code means the request was successful, while a 404 means the resource was not found."
+
+6. Variables in Postman
+
+Variables store reusable values to simplify API requests.
+
+Types of Variables in Postman:
+
+Type          Description
+
+Global        Accessible across all collections
+
+Collection    Limited to a specific API collection
+
+Environment   Used for different environments (Dev, QA, Prod)
+
+Data          Used in test scripts
+
+Local         Temporary values valid only during request execution
+
+How to Answer in an Interview?
+
+"Variables in Postman help store reusable values, making API testing more efficient. They can be used globally, within collections, for different environments, or for scripting purposes."
+
+How to Set/Get Variables in Scripts:
+
+pm.variables.set("key", "value");
+pm.variables.get("key");
+
+7. Scripts in Postman
+
+Postman allows running JavaScript-based scripts in two areas:
+
+Pre-request Scripts: Runs before the request is sent (e.g., setting headers, generating tokens).
+
+Test Scripts: Runs after the response is received (e.g., validating response data).
+
+Example Pre-request Script:
+
+pm.globals.set("authToken", "Bearer " + pm.response.json().token);
+
+Example Test Script:
+
+pm.test("Response time is less than 200ms", function () {
+    pm.expect(pm.response.responseTime).to.be.below(200);
+});
+
+How to Answer in an Interview?
+
+"Scripts in Postman help automate API testing. Pre-request scripts modify request parameters before sending, while test scripts validate response data."
+
+8. Collections in Postman
+
+A collection is a group of API requests stored together.
+
+Uses of Collections:
+
+Organizes API requests for easy access.
+
+Supports environment variables.
+
+Enables automated test execution.
+
+How to Answer in an Interview?
+
+"A collection in Postman is a set of API requests grouped together for better organization. It helps in managing requests, reusing variables, and running tests efficiently."
+
+9. API Testing Concepts
+
+API testing ensures that an API works as expected.
+
+Common API Testing Scenarios:
+
+Functional Testing: Verifies API outputs based on input.
+
+Security Testing: Checks authentication and authorization mechanisms.
+
+Performance Testing: Measures API response time.
+
+Negative Testing: Ensures API handles incorrect data properly.
+
+Data Validation: Confirms API returns correct and expected data.
+
+How to Answer in an Interview?
+
+"API testing validates whether an API performs its intended function correctly. It includes functional testing, security testing, performance testing, and handling negative cases."
+
+10. Difference Between REST and SOAP APIs
+
+Feature        REST                    SOAP
+
+Protocol       HTTP                    HTTP, SMTP, TCP
+
+Format         JSON, XML               XML
+
+Performance    Fast                    Slower due to XML overhead
+
+Stateless      Yes                     No (stateful)
+
+Use Case      Web APIs, mobile apps    Enterprise applications, banking
+
+11. What is an API Endpoint?
+
+An API endpoint is a specific URL where an API interacts with a client. Example:
+
+https://api.example.com/users/123
+
+12. What is API Rate Limiting?
+
+Rate limiting restricts the number of API requests a client can make within a given time frame to prevent abuse.
+
+13. What is API Caching?
+
+API caching stores responses temporarily to reduce load on the server and improve performance.
+
+14. How to Handle API Errors and Exceptions?
+
+Properly interpret status codes (e.g., 400, 401, 500).
+
+Implement retry logic for transient failures.
+
+Use error-handling middleware in backend APIs.
+
+15. What are Webhooks?
+
+Webhooks allow APIs to send real-time notifications when an event occurs (e.g., payment received notification).
+
+16. How to Automate API Testing in Postman?
+
+Use Postman Test scripts:
+
+pm.test("Status code is 200", function () {
+    pm.response.to.have.status(200);
+});
+
+Use Newman (Postman's CLI tool) for automated testing.
+
+17. What is Swagger/OpenAPI Specification?
+
+Swagger (OpenAPI) is a standard for API documentation and testing.
+
+Helps generate API client libraries and server stubs automatically.
+
+18. What is GraphQL and How is it Different from REST?
+
+Feature                     REST                           GraphQL
+
+Request format             Multiple endpoints              Single endpoint
+
+Data fetching              Fixed structure                 Flexible queries
+
+Over-fetching              Yes                             No
+
+Use Case                   Simple APIs                     Complex, flexible APIs
+
+20. Best Practices for API Development
+
+Use meaningful endpoint names (e.g., /users/{id} instead of /getUser).
+
+Implement proper authentication and authorization.
+
+Use pagination for large datasets.
+
+Return appropriate status codes.
+
+Provide detailed API documentation (Swagger, Postman collections).
+
+Ensure API security with rate limiting and validation.
+
+Final Tips for API Interviews
+
+Be clear with definitions and explanations.
+
+Demonstrate knowledge of Postman with practical examples.
+
+Explain API security measures (OAuth, JWT, rate limiting).
+
+Discuss error-handling strategies.
+
+Compare REST vs. SOAP and REST vs. GraphQL effectively.
+
+Show familiarity with API automation and testing tools.
+
+This document serves as a comprehensive guide for API interviews, covering both theoretical and practical aspects. 
+
+Good luck with your interview preparation!
